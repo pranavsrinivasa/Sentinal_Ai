@@ -53,7 +53,7 @@ To run Cybertron AI, ensure you have the following installed:
       - In a separate terminal, navigate to the frontend directory and run:
         ```bash
         cd cybertron_ai
-        npm start
+        npm run dev
 The system will now be running, and you can interact with it through the chat interface.
 
 ## Data Storage
