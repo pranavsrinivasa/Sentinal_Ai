@@ -7,6 +7,7 @@ import shutil
 import re
 from flask import request
 import getlogs
+import time
 
 app = Flask(__name__)
 CORS(app,resource={
@@ -47,6 +48,7 @@ def Agent_Query():
     print(data['prompt'])
     res = rev_bot.main_agent(proompt=data["prompt"])
     print("MAIN AGENT DONE")
+    res = "Hello"
     return jsonify({'response':res})
 
 @app.route('/converttocsv',methods=['POST'])
