@@ -4,6 +4,7 @@ import Heading from './Heading';  // Assuming you have a common heading componen
 import Section from './Section';  // Assuming you have a common section component
 import Button from './Button';    // Assuming you have a common button component
 import RingLoader from 'react-spinners/RingLoader';
+import MarkdownView from 'react-showdown';
 
 function MasterAgent() {
   const [messages, setMessages] = useState([]);
@@ -54,14 +55,14 @@ function MasterAgent() {
           {/* Chat Window */}
           <div 
             ref={chatWindowRef} 
-            className="chat-window mb-6 flex flex-col space-y-4 min-h-[200px] h-[700px] overflow-y-auto p-4 bg-gray-700 rounded-md"
+            className="chat-window mb-6 flex flex-col space-y-4 min-h-[200px] h-[500px] overflow-y-auto p-4 bg-gray-700 rounded-md"
           >
             {messages.map((message, index) => (
               <div
                 key={index}
                 className={`p-3 rounded-lg ${message.sender === 'user' ? 'bg-blue-600 self-start' : 'bg-purple-600 self-end'} text-white max-w-[500px] h-max`}
               >
-                {message.text}
+                <MarkdownView markdown={message.text} options={{tables:true,emoji:true}} className='agent_result'/>
               </div>
             ))}
             {messages.length > 0  && messages.at(-1).sender !== 'bot' && <div className='self-end'>

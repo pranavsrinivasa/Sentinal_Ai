@@ -4,6 +4,8 @@ import Heading from './Heading';  // Assuming you have a common heading componen
 import Section from './Section';  // Assuming you have a common section component
 import Button from './Button';
 import RingLoader from 'react-spinners/RingLoader';
+import ReactMarkdown from 'react-markdown';
+import MarkdownView from 'react-showdown';
 
 function ChatWithLogs() {
   const [messages, setMessages] = useState([]);
@@ -51,14 +53,15 @@ function ChatWithLogs() {
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg p-8 rounded-lg w-[50vw] mx-auto transition duration-300 transform hover:scale-105 hover:shadow-xl">
           {/* Chat Window */}
           <div  
-            className={`chat-window mb-6 flex flex-col space-y-4 min-h-[200px] h-[700px] overflow-y-auto p-4 bg-gray-700 rounded-md`}
+            className={`chat-window mb-6 flex flex-col space-y-4 min-h-[200px] h-[500px] overflow-y-auto p-4 bg-gray-700 rounded-md`}
           >
             {messages.map((message, index) => (
               <div
                 key={index}
                 className={`p-6 rounded-lg ${message.sender === 'user' ? 'bg-blue-600 self-start' : 'bg-purple-600 self-end'} text-white max-w-[500px] h-max`}
               >
-                {message.text}
+                {/* <ReactMarkdown>{message.text}</ReactMarkdown> */}
+                <MarkdownView markdown={message.text} options={{tables:true,emoji:true}} className='agent_result'/>
               </div>
             ))}
             

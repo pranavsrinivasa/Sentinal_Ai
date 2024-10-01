@@ -105,7 +105,17 @@ export const benefits = [
   {
     id: "3",
     title: "Master Agent",
-    text: "Get advanced insights and recommendations from our AI.",
+    text: "Multi-agent architecture with the ability to autonomously use all the above tools that perfectly fit your query",
+    backgroundUrl: "./src/assets/benefits/card-4.svg",
+    iconUrl: benefitIcon4,
+    imageUrl: benefitImage2,
+    light: true,
+    linkUrl: "/#master",  // Route to the Master component
+  },
+  {
+    id: "3",
+    title: "Structure Data",
+    text: "Invoke an LLM to structure your data into relevant columns and return a CSV",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
