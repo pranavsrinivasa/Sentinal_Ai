@@ -48,7 +48,7 @@ def Agent_Query():
     print(data['prompt'])
     res = rev_bot.main_agent(proompt=data["prompt"])
     print("MAIN AGENT DONE")
-    res = "Hello"
+    res.strip()
     return jsonify({'response':res})
 
 @app.route('/converttocsv',methods=['POST'])
@@ -61,9 +61,9 @@ def ConverttoCSV():
     f = open(file_path,'x')
     f.write(res)
     f.close()
-    status = {'status':'Not Converted Please Try again later'}
+    status = {'status':'Not Converted Please Try again later','filename':'N/A','data':'N/A'}
     if os.path.exists(f"Data\{data['filename']}.csv"):
-        status = {'status':'Converted to CSV successfully'}
+        status = {'status':'Converted to CSV successfully','filename':f"Data\{data['filename']}.csv",'data':res}
     return jsonify(status)
 
 @app.route('/create_logs',methods=['GET','POST'])
@@ -93,6 +93,7 @@ def MasterAgent():
     data = json.loads(data)
     rev_bot = cyberbot()
     res = rev_bot.master_agent(data['query'])
+    res.strip()
     return jsonify({'master_reponse':res})
 
 if __name__ == '__main__':

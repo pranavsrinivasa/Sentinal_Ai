@@ -13,7 +13,7 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
-          title="Chat Smarter, Not Harder with Brainwave"
+          title="Let the Sentinal Assist You"
         />
 
         {/* Grid layout with 1 column by default, 2 on medium screens, and 4 on large screens */}

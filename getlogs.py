@@ -44,12 +44,11 @@ def main(max_count = 1,time_interval=60):
         with open(csv_file, mode='a', newline='') as file:
             writer = csv.writer(file)
             
-            for process in processes:
+            for process in processes: 
                 pid, name, user = process
                 for conn in connections:
                     local_ip, local_port, remote_ip, remote_port, status = conn
                     writer.writerow([timestamp, cpu_usage, memory_usage, pid, name, user, local_ip, local_port, remote_ip, remote_port, status])
-                    
         cycle_count+= 1
         if cycle_count < max_count:
             time.sleep(time_interval)

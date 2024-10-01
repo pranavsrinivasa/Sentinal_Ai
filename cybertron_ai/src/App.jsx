@@ -7,6 +7,7 @@ import Upload from "./components/Upload";
 import Chat from "./components/Chat";
 import Create from "./components/Create";
 import MasterAgent from "./components/Master";
+import Structure from './components/Structure'
 
 const App = () => {
   return (
@@ -16,8 +17,9 @@ const App = () => {
         <Hero />
         <Benefits />
         <Upload />
-        <Chat />
         <Create />
+        <Structure/>
+        <Chat />
         <MasterAgent />
         <Footer />
       </div>

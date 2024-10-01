@@ -22,7 +22,7 @@ import getlogs
 class cyberbot:
     def __init__(self) -> None:
 
-        load_dotenv()
+        load_dotenv(dotenv_path='.env')
         os.environ['GOOGLE_API_KEY']  = os.getenv('GOOGLE_API_KEY')
         if os.getenv('GOOGLE_API_KEY') != 'YOUR_API_KEY':
             print('API LOADED')
@@ -32,7 +32,7 @@ class cyberbot:
         self.embed_model = embed_model = HuggingFaceEmbedding(model_name='BAAI/bge-small-en-v1.5')
         reader = SimpleDirectoryReader(input_dir="Data")
         self.documents = reader.load_data()
-        self.groq_llm = Groq(model="llama3-70b-8192", api_key="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")
+        # self.groq_llm = Groq(model="llama3-70b-8192", api_key="")
 
         pass
 
@@ -230,19 +230,22 @@ class cyberbot:
             Role: CyberSecurity Expert
             Instructions:
             - You have the tools detect_danger_tool,file_expert_tool and create_logs_tool
-            - Use file_expert_tool tool to get insights from the existing data
-            - Get insigths and the audit report from file_expert_tool and generate a final cohesive report with valid information
-            - Ensure all the user queries are answered in the answer
+            - You can use file_expert_tool tool to get insights from the existing data
+            - Use detect_danger_tool to get information about dangerous or suspicious logs
+            - Use detect_danger_tool to gain information about cyber threats that have occured
+            - Do no use detect_danger_tool unless user specifies to get infomation about cyber threats
             - Use create_logs_tool to generate logs from the existing computer
+            - Do not use create_logs_tool unless user specifies to to create logs
+            - Ensure all the user queries are answered in the answer
             - Provide a complete answer with all the information gained in previous steps
+            - Only provide the answer relevant to the user query
+            - Only use tools relevant to the user query
             - Do not hallucinate context
             - Do not deviate from instructions
-            - Do not use create_logs_tool unless specified by the user
             - Provide complete instructions for the file_expert_tool
-            - Use detect_danger_tool to get information about dangerous or suspicious logs
             - Follow the user query strictly
         """
         master_agent = ReActAgent.from_tools(tools = [create_logs_tool,file_expert_tool,detect_danger_tool],context=context1,llm=self.gemma_llm,max_iterations=50,verbose=True)
         res = master_agent.query(query)
-
-        return res.response
+        final_res = res.response
+        return final_res
