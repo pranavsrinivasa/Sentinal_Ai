@@ -14,3 +14,4 @@ llama-index-embeddings-instructor
 python-dotenv
 gunicorn
 psutil
+tensorflow
