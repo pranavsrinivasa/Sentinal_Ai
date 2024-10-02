@@ -13,3 +13,4 @@ scikit-learn
 llama-index-embeddings-huggingface
 llama-index-embeddings-instructor
 python-dotenv
+gunicorn
