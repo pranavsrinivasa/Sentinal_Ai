@@ -4,7 +4,6 @@ llama-index
 llama-index-llms-gemini
 llama-index-llms-groq
 termcolor
-tensorflow
 keras
 pandas
 numpy
@@ -14,3 +13,4 @@ llama-index-embeddings-huggingface
 llama-index-embeddings-instructor
 python-dotenv
 gunicorn
+psutil
