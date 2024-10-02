@@ -4,8 +4,6 @@ llama-index
 llama-index-llms-gemini
 llama-index-llms-groq
 termcolor
-os
-shutil
 tensorflow
 keras
 pandas
@@ -14,4 +12,4 @@ tqdm
 scikit-learn
 llama-index-embeddings-huggingface
 llama-index-embeddings-instructor
-dotenv
+python-dotenv
