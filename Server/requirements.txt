@@ -4,7 +4,6 @@ llama-index
 llama-index-llms-gemini
 llama-index-llms-groq
 termcolor
-re
 os
 shutil
 tensorflow
