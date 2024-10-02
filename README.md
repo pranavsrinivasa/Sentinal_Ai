@@ -1,6 +1,6 @@
 # Sentinal AI - Cybersecurity AI Agent
 
-Cybertron AI is a comprehensive cybersecurity agent designed to monitor your system by generating logs, detecting suspicious activities, and creating audit reports. The AI utilizes LSTM models to detect potential threats and provides a chat-based interface for querying logs or audit reports.
+Sentinal AI is a comprehensive cybersecurity agent designed to monitor your system by generating logs, detecting suspicious activities, and creating audit reports. The AI utilizes LSTM models to detect potential threats and provides a chat-based interface for querying logs or audit reports.
 This is a complete set of individual tools along with a master agent that is capable of doing them autonomously
 
 ## Table of Contents
