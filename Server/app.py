@@ -1,5 +1,5 @@
 from utils import *
-from flask import Flask,request,jsonify,json,stream_with_context
+from flask import Flask,request,jsonify,json,stream_with_context,send_from_directory
 from flask_cors import CORS, cross_origin
 import os
 from termcolor import colored
@@ -15,6 +15,18 @@ CORS(app,resource={
         "origins":"*"
     }
 })
+
+frontend_folder = os.path.join(os.getcwd(),"..","cybertron_ai")
+dist_folder = os.path.join(frontend_folder,"dist")
+
+# Server static files from the "dist" folder under the "frontend" directory
+@app.route("/",defaults={"filename":""})
+@app.route("/<path:filename>")
+def index(filename):
+  if not filename:
+    filename = "index.html"
+  return send_from_directory(dist_folder,filename)
+
 
 @app.route('/file_save',methods=['POST'])
 @cross_origin()
@@ -97,4 +109,4 @@ def MasterAgent():
     return jsonify({'master_reponse':res})
 
 if __name__ == '__main__':
-    app.run(port=8080,debug=True)
+    app.run(host='0.0.0.0',port=10000)
