@@ -39,15 +39,17 @@ To run Cybertron AI, ensure you have the following installed:
    cd cybertron_ai```
 2. Install the Python dependencies:
     ```bash
+    cd Server
     pip install -r requirements.txt
 3. Install Node.js dependencies:
     ```bash
-    cd frontend
+    cd cybertron_ai
     npm install
 4. Running the Project
     Start the backend: 
     - In the root directory, run:
         ```bash
+        cd Server
         python app.py
     - Start the frontend: 
       - In a separate terminal, navigate to the frontend directory and run:
