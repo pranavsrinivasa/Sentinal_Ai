@@ -42,14 +42,14 @@ class cyberbot:
         splitter2 = SentenceSplitter(chunk_size = 2000,chunk_overlap=200)
         nodes2 = splitter2.get_nodes_from_documents(self.documents)
 
-        if not os.path.exists('F:\Devfolio_hack\devfolio_hackathon-Cyber-AI\VectorData'):
+        if not os.path.exists('VectorData'):
             store = VectorStoreIndex(nodes2,embed_model=self.embed_model,show_progress=True)
             store.storage_context.persist(
-                persist_dir='F:\Devfolio_hack\devfolio_hackathon-Cyber-AI\VectorData'
+                persist_dir='VectorData'
             )
         else:
             store = load_index_from_storage(
-                            StorageContext.from_defaults(persist_dir=f"F:\Devfolio_hack\devfolio_hackathon-Cyber-AI\VectorData"),
+                            StorageContext.from_defaults(persist_dir=f"VectorData"),
                             embed_model = self.embed_model
                         )
         
@@ -78,7 +78,7 @@ class cyberbot:
                 - Provide detailed request as input to the tools
         """
 
-        agent = ReActAgent.from_tools(tools=tools,context=context,llm=self.groq_llm,verbose=True,max_iterations=100)
+        agent = ReActAgent.from_tools(tools=tools,context=context,llm=self.gemma_llm,verbose=True,max_iterations=100)
         res = agent.query(proompt)
 
         return res.response

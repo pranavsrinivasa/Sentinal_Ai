@@ -1,3 +1,5 @@
 dev_env
 .env
 LOG_DETECTS.txt
+__pycache__
+VectorData
