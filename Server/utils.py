@@ -15,6 +15,7 @@ from llama_index.core.prompts import ChatMessage
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+os.environ['TF_ENABLE_ONEDNN_OPTS'] ='0'
 import keras
 from tqdm import tqdm
 import getlogs
