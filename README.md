@@ -3,6 +3,9 @@
 Sentinal AI is a comprehensive cybersecurity agent designed to monitor your system by generating logs, detecting suspicious activities, and creating audit reports. The AI utilizes LSTM models to detect potential threats and provides a chat-based interface for querying logs or audit reports.
 This is a complete set of individual tools along with a master agent that is capable of doing them autonomously
 
+## Usage Video :
+[![image](https://github.com/user-attachments/assets/b811d5e2-e398-4118-9964-e743da0cb004)](https://www.youtube.com/watch?v=OAhx3_3ObBQ)
+
 ## Table of Contents
 
 - [Sentinal AI - Cybersecurity AI Agent](#sentinal-ai---cybersecurity-ai-agent)
@@ -87,7 +90,6 @@ Finally, a master agent is a multiagent with all of the above tools, that can au
 ## Images:
 ![image](https://github.com/user-attachments/assets/5041d1b1-7238-4ec3-b195-20e294e9a50b)
 ![image](https://github.com/user-attachments/assets/33768369-2ec9-4b6a-810e-84de95995b68)
-[![image](https://github.com/user-attachments/assets/b811d5e2-e398-4118-9964-e743da0cb004)](https://www.youtube.com/watch?v=OAhx3_3ObBQ)
 
 
 
