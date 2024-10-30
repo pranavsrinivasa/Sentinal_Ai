@@ -24,7 +24,7 @@ This is a complete set of individual tools along with a master agent that is cap
 
 ## Prerequisites
 
-To run Cybertron AI, ensure you have the following installed:
+To run sentinal AI, ensure you have the following installed:
 
 - Python 3.7+
 - Node.js 14+
@@ -83,6 +83,14 @@ The chatbot will respond with relevant information or actions.
 ## Master Agent
 
 Finally, a master agent is a multiagent with all of the above tools, that can autonomously do all the above based on the user query.
+
+## Images:
+![image](https://github.com/user-attachments/assets/5041d1b1-7238-4ec3-b195-20e294e9a50b)
+![image](https://github.com/user-attachments/assets/33768369-2ec9-4b6a-810e-84de95995b68)
+[![image](https://github.com/user-attachments/assets/b811d5e2-e398-4118-9964-e743da0cb004)](https://www.youtube.com/watch?v=OAhx3_3ObBQ)
+
+
+
 
 License
 This project is licensed under the MIT License.
